@@ -17,7 +17,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emitter(LoadingHomeState());
 
     var movies = await _getMoviesUsecase();
-    movies.fold((l) {}, (r) {
+    movies.fold((l) {
+      emitter(ErrorHomeState(l.message));
+    }, (r) {
       emitter(SucessHomeState(movies: r));
     });
   }

@@ -50,6 +50,10 @@ class _HomePageState extends State<HomePage> {
                   if (state is SucessHomeState) {
                     return SuccessStateWidget(state: state);
                   }
+
+                  if (state is ErrorHomeState) {
+                    return Text(state.message);
+                  }
                   return const SizedBox();
                 })
           ],

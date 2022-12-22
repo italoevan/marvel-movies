@@ -15,4 +15,9 @@ class SucessHomeState extends HomeState {
   });
 }
 
-class ErrorHomeState extends HomeState {}
+class ErrorHomeState extends HomeState {
+  final String message;
+  const ErrorHomeState(
+    this.message,
+  );
+}
