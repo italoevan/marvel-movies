@@ -18,7 +18,7 @@ class GetMoviesUsecaseImpl extends IGetMoviesUsecase {
 
   @override
   Future<Either<Failure, List<MovieEntity>>> call() async {
-    var response = await await repository.getMovies();
+    var response = await repository.getMovies();
 
     if (response.isEmpty) {
       return Left(EmptyMovieError(message: ErrorMessages.emptyMovies));
